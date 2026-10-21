@@ -524,6 +524,7 @@ body { background: #e9e8e3; }
   .device-frame { position: relative; left: auto; top: auto; width: 100%; height: 100dvh; aspect-ratio: auto; padding: 0; transform: none; border: 0; border-radius: 0; box-shadow: none; }
   .device-frame::before, .device-frame::after { display: none; }
   .app-shell { border-radius: 0; }
+  .system-status, .dynamic-island, .home-indicator { display: none; }
 }
 @media (max-height: 700px) {
   .canvas { padding-top: 130px; padding-bottom: 130px; }
