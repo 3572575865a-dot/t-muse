@@ -26,7 +26,7 @@ svg { flex-shrink: 0; }
 .device-frame { position: absolute; left: 50%; top: 50%; width: 418px; height: 890px; aspect-ratio: auto; padding: 8px; transform: translate(-50%, -50%); background: #20221f; border: 0; border-radius: 48px; box-shadow: 0 20px 60px #2529221c; }
 .app-shell { border-radius: 40px; background: radial-gradient(120% 75% at 54% 2%, #684e3b47, transparent 52%), radial-gradient(60% 45% at 20% 55%, #4b342f3d, transparent 70%), linear-gradient(156deg, #382b23 0%, #221914 52%, #2d211a 100%); box-shadow: none; }
 .app-shell::before, .app-shell::after { display: none; }
-.system-status { z-index: 70; color: var(--ink); font-family: var(--font-ui); font-size: 12px; font-weight: 600; }
+.system-status { z-index: 70; background: transparent; color: var(--ink); font-family: var(--font-ui); font-size: 12px; font-weight: 600; }
 .battery { border-color: currentColor; }
 .battery i, .battery::after { background: currentColor; }
 .dynamic-island { z-index: 70; width: 110px; height: 30px; top: 10px; box-shadow: none; }
@@ -519,11 +519,17 @@ body { background: #e9e8e3; }
   .category-label:hover, .category-add:hover, .detail-tools-body button:hover { color: var(--accent); background: #ffffff0c; }
 }
 @media (max-width: 520px) {
-  body { background: var(--paper); }
+  body {
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(circle at 18% 14%, #ffffff8c 0 1px, transparent 1.5px),
+      radial-gradient(circle at 72% 64%, #25221d0a 0 1px, transparent 1.5px);
+    background-size: 23px 23px, 29px 29px;
+  }
   .device-stage { padding: 0; min-height: 100dvh; display: block; }
-  .device-frame { position: relative; left: auto; top: auto; width: 100%; height: 100dvh; aspect-ratio: auto; padding: 0; transform: none; border: 0; border-radius: 0; box-shadow: none; }
+  .device-frame { position: relative; left: auto; top: auto; width: 100%; height: 100dvh; aspect-ratio: auto; padding: 0; transform: none; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
   .device-frame::before, .device-frame::after { display: none; }
-  .app-shell { border-radius: 0; }
+  .app-shell { border-radius: 0; background: transparent; }
   .system-status, .dynamic-island, .home-indicator { display: none; }
 }
 @media (max-height: 700px) {
