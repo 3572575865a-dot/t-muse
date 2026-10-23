@@ -3,6 +3,12 @@ const toast = document.querySelector('.toast');
 const cardViewport = document.querySelector('.card-viewport');
 const cardTrack = document.querySelector('.card-track');
 const detailPage = document.querySelector('.detail-page');
+const themeColorMeta = document.querySelector('meta[name="theme-color"]');
+function syncThemeColor() {
+  themeColorMeta?.setAttribute('content', detailPage.hidden ? '#f4f0ea' : '#eae4dc');
+}
+new MutationObserver(syncThemeColor).observe(detailPage, { attributes: true, attributeFilter: ['hidden'] });
+syncThemeColor();
 const editToggle = document.querySelector('.edit-toggle');
 const editorCanvas = document.querySelector('.editor-canvas');
 const imageInput = document.querySelector('.image-input');

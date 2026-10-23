@@ -523,7 +523,12 @@ body { background: #e9e8e3; }
   .category-label:hover, .category-add:hover, .detail-tools-body button:hover { color: var(--accent); background: #2928250c; }
 }
 @media (max-width: 520px) {
-  html, body { background: var(--paper); }
+  html, body, .device-stage, .device-frame, .app-shell { background: var(--paper); }
+  html:has(.detail-page:not([hidden])),
+  body:has(.detail-page:not([hidden])),
+  .device-stage:has(.detail-page:not([hidden])),
+  .device-frame:has(.detail-page:not([hidden])),
+  .app-shell:has(.detail-page:not([hidden])) { background: var(--paper-deep); }
   .device-stage { padding: 0; min-height: 100dvh; display: block; }
   .device-frame { position: relative; left: auto; top: auto; width: 100%; height: 100dvh; aspect-ratio: auto; padding: 0; transform: none; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
   .device-frame::before, .device-frame::after { display: none; }
