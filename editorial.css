@@ -534,6 +534,17 @@ body { background: #e9e8e3; }
   .device-frame::before, .device-frame::after { display: none; }
   .app-shell { border-radius: 0; background: transparent; }
   .system-status, .dynamic-island, .home-indicator { display: none; }
+
+  /* Keep the live phone layout a little higher without consuming the safe area. */
+  .topbar,
+  .detail-back,
+  .edit-toggle,
+  .detail-more-toggle,
+  .new-outfit-button,
+  .inspiration-viewer-back,
+  .inspiration-viewer-favorite { transform: translateY(-14px); }
+  .canvas { padding-top: 136px; }
+  .detail-empty-state { transform: translateY(-14px); }
 }
 @media (max-height: 700px) {
   .canvas { padding-top: 130px; padding-bottom: 130px; }
